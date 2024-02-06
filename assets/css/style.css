@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url(../images/triviapage1.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .quiz-button {
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #87ceeb; /* Bubble-shaped button color */
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+
+  .quiz-button:hover {
+    background-color: #4682b4; /* Change color on hover */
+    transform: scale(1.25); /* Enlarge by 25% on hover */
+  }
+
+  .quiz-button span {
+    display: block;
+    font-size: 24px; /* Large writing for the main text */
+  }
+
+  .quiz-button small {
+    font-size: 10px; /* Very small writing for the secondary text */
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+  }
