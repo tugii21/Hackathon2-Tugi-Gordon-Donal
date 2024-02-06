@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz API Sandbox</title>
+</head>
+
+<body>
+    <div style="color:blue; background-color:red" id="content1"></div>
+    <div id="content"></div>
+    <div id="content2"></div>
+    <div style="color:blue; background-color:aqua; width: 50%" id="content3"></div>
+    <div id="content4"></div>
+    <div id="content5"></div>
+    <div id="content6"></div>
+</body>
+
+<script>
+    // fetch("https://the-trivia-api.com/v2/session")
+    fetch('https://the-trivia-api.com/v2/questions')
+        .then(response => response.json())      // then(response => response.text())
+        .then(data => displayData(data))
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        });
+    document.getElementById("content1").innerText = "Hi World";
+
+    function displayData(data) {
+        setTimeout(20000)
+        document.getElementById("content").innerText = "Question Topic: " + data[0].tags;
+        document.getElementById("content2").innerText = "question: " + data[0].question.text;  // access the actual question: object = question -> text = parameter.
+        document.getElementById("content4").innerText = "correctAnswer: " + data[0].correctAnswer;
+        document.getElementById("content5").innerText = "incorrectAnswers: " + data[0].incorrectAnswers;
+
+        //document.getElementById("content").innerText = data[0].question;
+        //document.getElementById("content").innerText = data[1].category;
+        //document.getElementById("content").innerText = data["id"];
+        console.log(data.length);
+        for (let i = 0; i < data.length; i++) {
+            console.log(i);
+            for (const key in data[i]) {
+
+                console.log(`${key}: ${data[i][key]}`);
+                //  console.log(`${key}: ${data[0][question][0]}`);
+
+                // for (const key in data[0][question]) {
+                //console.log(`${key}: ${data[0][question][key]}`);
+                //  console.log(`${key}: ${data[0][question][0]}`);
+            }
+        }
+        //setTimeout(resolve, 20);
+        //setTimeout(200)      
+    }
+    document.getElementById("content3").innerText = "Hi World again";
+</script>
+
+</html>
