@@ -41,6 +41,11 @@ body {
 
 
   /* Footer */
+
+footer{
+  position: fixed; 
+  bottom: 0;} 
+  
 #social-networks {
   text-align: center;
   padding: 20px 0;
