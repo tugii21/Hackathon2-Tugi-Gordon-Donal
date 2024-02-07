@@ -1,76 +1,198 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Honk&display=swap');
 
 body {
-  background-color: rgb(59, 105, 146) !important;
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url(../images/triviapage1.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 
-  
+.quiz-button {
+  font-family: 'Arial', sans-serif;
+  font-size: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: #87ceeb; /* Bubble-shaped button color */
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.quiz-button:hover {
+  background-color: #4682b4; /* Change color on hover */
+  transform: scale(1.25); /* Enlarge by 25% on hover */
+}
+
+.quiz-button span {
+  display: block;
+  font-size: 24px; /* Large writing for the main text */
+}
+
+.quiz-button small {
+  font-size: 10px; /* Very small writing for the secondary text */
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
  
-  }
 
-  nav {
-    font-family: 'Bebas Neue', sans-serif;
-  }
+/* Footer */
 
-  .quiz-button {
-    font-family: 'Honk', system-ui, sans-serif;
-    font-size: 20px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    background-color: #87ceeb; /* Bubble-shaped button color */
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition: background-color 0.3s, transform 0.3s;
-  }
-
-  .quiz-button:hover {
-    background-color: #4682b4; /* Change color on hover */
-    transform: scale(1.25); /* Enlarge by 25% on hover */
-  }
-
-  .quiz-button span {
-    display: block;
-    font-size: 24px; /* Large writing for the main text */
-  }
-
-  .question-box {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: xx-large;
-  }
-
- 
-
-  /* Footer */
 
 footer{
-  position: fixed; 
-  bottom: 0;} 
+position: fixed; 
+bottom: 0;
+left: 100px;
+}
+footer p{
+
+  margin-top: 50px; /* Add margin between social icons and copyright text */
+  margin-left: 500px;
   
+  
+}
+
 #social-networks {
-  text-align: center;
-  padding: 20px 0;
-  display: flex;
-  justify-content: space-evenly;
-  list-style-type: none;
-  position: fixed;
-  bottom: 0;
-  width: 25%;
+text-align: center;
+/*padding: 20px 0;*/
+display: flex;
+justify-content: space-evenly;
+list-style-type: none;
+position: absolute;
+bottom: 0;
+width: 25%;
+
+
+
 }
 
 #social-networks i {
-  font-size: 160%;
-  padding: 5%;
-  color: #3a3a3a;
+font-size: 160%;
+padding: 5%;
+color: #3a3a3a;
+margin-right: 10px;
+
+
+
 }
 
 #menu {
-  font-size: 110%;
-  letter-spacing: 4px;
-  list-style-type: none;
+font-size: 110%;
+letter-spacing: 4px;
+list-style-type: none;
 }
 
 #menu > li {
-  margin-bottom: 1em;
+margin-bottom: 1em;
 }
+
+/*  CSS for Feedback section - Start*/
+/*  this makes required button yellow  on FEEDBACK Page*/
+.bg-yellow-200 {
+--tw-bg-opacity: 1;
+background-color: rgb(254 240 138 / var(--tw-bg-opacity));
+}
+
+
+/*  position feeback section*/
+
+.max-w-3xl {
+max-width: 48rem;
+}
+
+.py-4 {
+padding-top: 1rem;
+padding-bottom: 1rem;
+}
+
+.py-8 {
+padding-top: 2rem;
+padding-bottom: 2rem;
+}
+
+.mx-auto {
+margin-left: auto;
+margin-right: auto;
+}
+
+.rounded-full {
+border-radius: 9999px;
+}
+.justify-center {
+justify-content: center;
+}
+.w-full {
+width: 100%;
+}
+
+button, input, optgroup, select, textarea {
+/* font-family: inherit; */
+font-size: 100%;
+font-weight: inherit;
+line-height: inherit;
+color: inherit;
+margin: 0;
+padding: 0;
+}
+.items-center {
+align-items: center;
+}
+
+.bg-primary-500 {
+--tw-bg-opacity: 1;
+background-color: #0090e4;
+}
+.text-white {
+--tw-text-opacity: 1;
+color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.mb-2 {
+margin-bottom: 0.5rem;
+}
+
+.text-primary-700 {
+--tw-text-opacity: 1;
+color: rgb(47 38 132 / var(--tw-text-opacity));
+}
+
+.text-xl {
+font-size: 2rem;
+
+}
+
+.mt-10 {
+margin-top: 4rem;
+}
+p{
+margin: 1;
+}
+
+.font-semibold {
+font-weight: 600;
+}
+.text-xs {
+font-size: .75rem;
+line-height: 1rem;
+}
+
+textarea{
+
+appearance: none;
+background-color: #fff;
+border-color: #6b7280;
+border-width: 1px;
+border-radius: 0;
+padding: 0.5rem 0.75rem;
+font-size: 1rem;
+line-height: 1.5rem;
+
+}
+/*  CSS for Feedback section - Finished*/
