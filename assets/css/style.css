@@ -1,16 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Honk&display=swap');
+
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-    background-image: url(../images/triviapage1.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
+  background-color: rgb(59, 105, 146) !important;
+  
+
+  
+ 
+  }
+
+  nav {
+    font-family: 'Bebas Neue', sans-serif;
   }
 
   .quiz-button {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Honk', system-ui, sans-serif;
     font-size: 20px;
     padding: 10px 20px;
     border: none;
@@ -32,27 +35,14 @@ body {
     font-size: 24px; /* Large writing for the main text */
   }
 
-  .quiz-button small {
-    font-size: 10px; /* Very small writing for the secondary text */
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
-  }
+  
 
 
   /* Footer */
-#social-networks {
-  text-align: center;
-  padding: 20px 0;
-  display: flex;
-  justify-content: space-evenly;
-  list-style-type: none;
-  position: fixed;
-  bottom: 0;
-  width: 25%;
-}
 
-#social-networks i {
+
+.social-network  {
+
   font-size: 160%;
   padding: 5%;
   color: #3a3a3a;
