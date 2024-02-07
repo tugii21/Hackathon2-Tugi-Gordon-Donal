@@ -4,88 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>The Dream Team Trivia Quiz</title>
     <!--this is favicon-->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
 </head>
-</head>
-<body>
-    <header>Welcome to the Dream Team Quiz
-        <nav>
-            <ul id="menu">
-                <li><a href="index.html" >Home</a></li>
-                <li><a href="quiz.html" class="active">Play QUIZ!</a></li>
-                <li><a href="feedback.html">Feedback</a></li>
-            </ul>
-        </nav>
-        </header>
-
-        <div class="question-box">
-
-        </div>
-
-        <div class="answer-box" id="ab1"> </div>
-        <div class="answer-box" id="ab2">  </div>
-        <div class="answer-box" id="ab3">  </div>
-        <div class="answer-box" id="ab4">  </div>
-
-
-        <div class="correct-answer" id="correct"></div>
-        <div class="wrong-answer" id="wrong"></div>
-
-
-
-    <main>
-        
-        
-        <button class="quiz-button" onclick="alert('Clicked!')">
-            <span>The Dream Team Trivia Quiz</span>
-            <small>Click me</small>
-          </button>
-          
-
-
-    </main>
-
-    <footer>
-        <ul id="social-networks">
-          
-            <li>
-                <a href="https://www.twitter.com/" target="_blank" rel="noopener"
-                    aria-label="Visit our Twitter page (opens in a new tab)">
-                    <i class="fa-brands fa-square-twitter"></i></a>
-            </li>
-            <li>
-                <a href="https://www.facebook.com/" target="_blank" rel="noopener"
-                    aria-label="Visit our Facebook page (opens in a new tab)">
-                    <i class="fa-brands fa-square-facebook"></i></a>
-            </li>
-            <li>
-                <a href="https://www.youtube.com/" target="_blank" rel="noopener"
-                    aria-label="Visit our YouTube page (opens in a new tab)">
-                    <i class="fa-brands fa-youtube-square"></i></a>
-            </li>
-
-            <li>
-                <a href="https://www.instagram.com/" target="_blank" rel="noopener"
-                    aria-label="Visit our instagram page (opens in a new tab)">
-                    <i class="fa-brands fa-square-instagram"></i></a>
-            </li>
-
-            <li>
-                <a href="https://www.linkedin.com/company/openwebhq/" target="_blank" rel="noopener"
-                    aria-label="Visit our linkedin page (opens in a new tab)">
-                    <i class="fa-brands fa-linkedin"></i></i></a>
-            </li>
-
-            
-         
-        </ul>
-        <p>&copy; 2024 The Dream Team. All rights reserved.</p>
-    </footer>
-
+<body class="d-flex align-items-center justify-content-center" style="height: 100vh;">
+    <Header>    </Header>
+    <nav class="navbar fixed-top d-flex align-items-center justify-content-center navbar-light bg-0 m-1">
+        <a class="navbar-brand" href="index.html">Home</a>
+        <a class="navbar-brand active" href="quiz.html">Play Quiz</a>
+        <a class="navbar-brand " href="feedback.html">Feedback</a>
+      </nav>
+      <div class="question-box text-center">
+        <h2>What is the capital of France?</h2>
+        <button class="btn btn-primary answer-btn" id="answer1">Paris</button>
+        <button class="btn btn-primary answer-btn" id="answer2">Berlin</button>
+        <button class="btn btn-primary answer-btn" id="answer3">Madrid</button>
+        <button class="btn btn-primary answer-btn" id="answer4">Rome</button>
+    </div>
+    <footer class="fixed-bottom bg-light d-flex justify-content-around align-items-center p-2">
+        <a href="https://www.twitter.com/" target="_blank" rel="noopener" aria-label="Visit our Twitter page (opens in a new tab)">
+            <i class="fa-brands fa-square-twitter"></i></a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Visit our Facebook page (opens in a new tab)">
+            <i class="fa-brands fa-square-facebook"></i>
+        </a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="Visit our YouTube page (opens in a new tab)">
+            <i class="fa-brands fa-youtube-square"></i>
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Visit our Instagram page (opens in a new tab)">
+            <i class="fa-brands fa-square-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/openwebhq/" target="_blank" rel="noopener" aria-label="Visit our LinkedIn page (opens in a new tab)">
+            <i class="fa-brands fa-linkedin"></i>
+        </a>
+     
+</footer>
     <!-- Font Awesome kit -->
     <script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous"></script>
 </body>

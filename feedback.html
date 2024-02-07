@@ -4,142 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>The Dream Team Trivia Quiz</title>
-    <!--this is favicon-->
+    <!-- This is favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
 </head>
-</head>
-<body>
-    <header>
-        <nav>
-            <ul id="menu">
-                <li><a href="index.html" >Home</a></li>
-                <li><a href="quiz.html" >Play QUIZ!</a></li>
-                <li><a href="feedback.html" class="active">Feedback</a></li>
-            </ul>
-        </nav>
-        </header>
+<body class="d-flex align-items-center justify-content-center" style="height: 100vh;">
+    <!-- Header Section -->
+    <nav class="navbar fixed-top d-flex align-items-center justify-content-center navbar-light bg-0 m-1">
+        <a class="navbar-brand" href="index.html">Home</a>
+        <a class="navbar-brand" href="quiz.html">Play Quiz</a>
+        <a class="navbar-brand active" href="feedback.html">Feedback</a>
+    </nav>
 
+    <!-- Main Content Section -->
+    <div class="container max-w-3xl px-4 py-8 mx-auto lg:px-8 lg:pt-16">
+        <h1 class="mb-2 text-2xl font-bold leading-tight md:text-4xl text-primary-700">
+            Please write your feedback below and we can improve our site!
+        </h1>
 
+        <h2 class="mb-8 text-xl md:text-2xl text-primary-700">
+            <a href="https://github.com/tugii21/Hackathon2-Tugi-Gordon-Donal" title="Read the docs" class="underline text-primary-700">Check out our Github Page</a>, also you can fill the Form below so we will back to you.
+        </h2>
 
-    <main>
-        <main>
-     
+        <div class="mt-10">
+            <form method="POST" action="https://github.com/tugii21/Hackathon2-Tugi-Gordon-Donal">
+                <input type="hidden" name="_token" value="VMFMr6iH4a06tVsb1jINmoL5mnedrpCwxoEuMD0j">
 
-
-            <div class="container max-w-3xl px-4 py-8 mx-auto lg:px-8 lg:pt-16">
-                <h1 class="mb-2 text-2xl font-bold leading-tight md:text-4xl text-primary-700">
-                    Please write your feedback below and we can improve our site!
-                </h1>
-            
-                <h2 class="mb-8 text-xl md:text-2xl text-primary-700">
-                    <a href="https://github.com/tugii21/Hackathon2-Tugi-Gordon-Donal" title="Read the docs" class="underline text-primary-700">Check out our Github Page</a>, also you can fill the Form below so we will back to you.
-                </h2>
-            
-                <div class="mt-10">
-                    <form method="POST" action="https://github.com/tugii21/Hackathon2-Tugi-Gordon-Donal"><input type="hidden" name="_token" value="VMFMr6iH4a06tVsb1jINmoL5mnedrpCwxoEuMD0j">
-                        
-                        
-                        
-                            <div class="mb-2 text-primary-700">
-                                <label class="flex items-center space-x-2 text-xl font-semibold">
-                                    <span>What do you need help with?</span>
-                                    
-                                        <span class="px-2 py-1 text-xs font-medium leading-none text-yellow-900 bg-yellow-200 rounded-full">Required</span>
-                                    
-                                </label>
-                                <p>Select from the lists.</p>
-                                <div class="p-1"><select name="category" required=""><option value="">Please select...</option><option value="account">I can't access QUIZ</option><option value="feature">I want additional a feature</option><option value="help">I'm confused how to answer</option><option value="issue">there is problem with your site</option><option value="other">Other issue</option></select></div>
-                                
-                            </div>
-                        
-                            <div class="mb-2 text-primary-700">
-                                <label class="flex items-center space-x-2 text-xl font-semibold">
-                                    <span>Any Feedback?</span>
-                                    
-                                        <span class="px-2 py-1 text-xs font-medium leading-none text-yellow-900 bg-yellow-200 rounded-full">Additional</span>
-                                    
-                                </label>
-                                <p></p>
-                                <div class="p-1"><textarea name="comment" rows="5" required=""></textarea></div>
-                                
-                            </div>
-                        
-                            <div class="mb-2 text-primary-700">
-                                <label class="flex items-center space-x-2 text-xl font-semibold">
-                                    <span>Type your email address here?</span>
-                                    
-                                        <span class="px-2 py-1 text-xs font-medium leading-none text-yellow-900 bg-yellow-200 rounded-full">Required</span>
-                                    
-                                </label>
-                                <p></p>
-                                <div class="p-1"><input type="email" name="email" value="" placeholder="email@gmail.com" required=""></div>
-                                
-                            </div>
-                        
-            
-                        <button class="inline-flex items-center justify-center w-full px-8 py-4 text-2xl font-medium leading-6 text-white rounded-full button-press bg-primary-500 drop-shadow-lg" type="submit">
-                            Submit
-                        </button>
-                    </form>
+                <div class="mb-2 text-primary-700">
+                    <label class="flex items-center space-x-2 text-xl font-semibold">
+                        <span>What do you need help with?</span>
+                        <span class="px-2 py-1 text-xs font-medium leading-none text-yellow-900 bg-yellow-200 rounded-full">Required</span>
+                    </label>
+                    <p>Select from the lists.</p>
+                    <div class="p-1">
+                        <select name="category" required="">
+                            <option value="">Please select...</option>
+                            <option value="account">I can't access QUIZ</option>
+                            <option value="feature">I want additional a feature</option>
+                            <option value="help">I'm confused how to answer</option>
+                            <option value="issue">there is problem with your site</option>
+                            <option value="other">Other issue</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
-    
-    
-    
-    
-    
-    
-        </main>
-    
+
+                <div class="mb-2 text-primary-700">
+                    <label class="flex items-center space-x-2 text-xl font-semibold">
+                        <span>Any Feedback?</span>
+                        <span class="px-2 py-1 text-xs font-medium leading-none text-yellow-900 bg-yellow-200 rounded-full">Additional</span>
+                    </label>
+                    <p></p>
+                    <div class="p-1"><textarea name="comment" rows="5" required=""></textarea></div>
+                </div>
+
+                <div class="mb-2 text-primary-700">
+                    <label class="flex items-center space-x-2 text-xl font-semibold">
+                        <span>Type your email address here?</span>
+                        <span class="px-2 py-1 text-xs font-medium leading-none text-yellow-900 bg-yellow-200 rounded-full">Required</span>
+                    </label>
+                    <p></p>
+                    <div class="p-1"><input type="email" name="email" value="" placeholder="email@gmail.com" required=""></div>
+                </div>
+
+                <button class="inline-flex items-center justify-center w-full px-8 py-4 text-2xl font-medium leading-6 text-white rounded-full button-press bg-primary-500 drop-shadow-lg main-content" type="submit">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="fixed-bottom bg-light d-flex justify-content-around align-items-center p-2">
+        <a href="https://www.twitter.com/" target="_blank" rel="noopener" aria-label="Visit our Twitter page (opens in a new tab)">
+            <i class="fa-brands fa-square-twitter"></i></a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Visit our Facebook page (opens in a new tab)">
+            <i class="fa-brands fa-square-facebook"></i>
+        </a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="Visit our YouTube page (opens in a new tab)">
+            <i class="fa-brands fa-youtube-square"></i>
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Visit our Instagram page (opens in a new tab)">
+            <i class="fa-brands fa-square-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/openwebhq/" target="_blank" rel="noopener" aria-label="Visit our LinkedIn page (opens in a new tab)">
+            <i class="fa-brands fa-linkedin"></i>
+        </a>
         
-        
-   
-          
-
-
-    </main>
-
-    <footer>
-        <ul id="social-networks">
-          
-            <li>
-                <a href="https://www.twitter.com/" target="_blank" rel="noopener"
-                    aria-label="Visit our Twitter page (opens in a new tab)">
-                    <i class="fa-brands fa-square-twitter"></i></a>
-            </li>
-            <li>
-                <a href="https://www.facebook.com/" target="_blank" rel="noopener"
-                    aria-label="Visit our Facebook page (opens in a new tab)">
-                    <i class="fa-brands fa-square-facebook"></i></a>
-            </li>
-            <li>
-                <a href="https://www.youtube.com/" target="_blank" rel="noopener"
-                    aria-label="Visit our YouTube page (opens in a new tab)">
-                    <i class="fa-brands fa-youtube-square"></i></a>
-            </li>
-
-            <li>
-                <a href="https://www.instagram.com/" target="_blank" rel="noopener"
-                    aria-label="Visit our instagram page (opens in a new tab)">
-                    <i class="fa-brands fa-square-instagram"></i></a>
-            </li>
-
-            <li>
-                <a href="https://www.linkedin.com/company/openwebhq/" target="_blank" rel="noopener"
-                    aria-label="Visit our linkedin page (opens in a new tab)">
-                    <i class="fa-brands fa-linkedin"></i></i></a>
-            </li>
-
-            
-         
-        </ul>
-        <p>&copy; 2024 The Dream Team. All rights reserved.</p>
-    </footer>
-
-    <!-- Font Awesome kit -->
-    <script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous"></script>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<!-- Font Awesome kit -->
+<script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous"></script>
 </body>
 </html>
