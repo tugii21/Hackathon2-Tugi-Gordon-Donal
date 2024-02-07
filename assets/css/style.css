@@ -44,9 +44,22 @@ body {
 
   /* Footer */
 
+footer{
+  position: fixed; 
+  bottom: 0;} 
+  
+#social-networks {
+  text-align: center;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
+  position: fixed;
+  bottom: 0;
+  width: 25%;
+}
 
-.social-network  {
-
+#social-networks i {
   font-size: 160%;
   padding: 5%;
   color: #3a3a3a;
