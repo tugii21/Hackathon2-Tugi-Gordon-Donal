@@ -12,12 +12,12 @@
 </head>
 </head>
 <body>
-    <header>Welcome to the Dream Team Quiz
+    <header>
         <nav>
             <ul id="menu">
                 <li><a href="index.html" >Home</a></li>
                 <li><a href="quiz.html" >Play QUIZ!</a></li>
-                <li><a href="feedback.html" class="active">feedback</a></li>
+                <li><a href="feedback.html" class="active">Feedback</a></li>
             </ul>
         </nav>
         </header>
@@ -25,9 +25,78 @@
 
 
     <main>
+        <main>
+     
+
+
+            <div class="container max-w-3xl px-4 py-8 mx-auto lg:px-8 lg:pt-16">
+                <h1 class="mb-2 text-2xl font-bold leading-tight md:text-4xl text-primary-700">
+                    Please write your feedback below and we can improve our site!
+                </h1>
+            
+                <h2 class="mb-8 text-xl md:text-2xl text-primary-700">
+                    <a href="https://github.com/tugii21/Hackathon2-Tugi-Gordon-Donal" title="Read the docs" class="underline text-primary-700">Check out our Github Page</a>, also you can fill the Form below so we will back to you.
+                </h2>
+            
+                <div class="mt-10">
+                    <form method="POST" action="https://github.com/tugii21/Hackathon2-Tugi-Gordon-Donal"><input type="hidden" name="_token" value="VMFMr6iH4a06tVsb1jINmoL5mnedrpCwxoEuMD0j">
+                        
+                        
+                        
+                            <div class="mb-2 text-primary-700">
+                                <label class="flex items-center space-x-2 text-xl font-semibold">
+                                    <span>What do you need help with?</span>
+                                    
+                                        <span class="px-2 py-1 text-xs font-medium leading-none text-yellow-900 bg-yellow-200 rounded-full">Required</span>
+                                    
+                                </label>
+                                <p>Select from the lists.</p>
+                                <div class="p-1"><select name="category" required=""><option value="">Please select...</option><option value="account">I can't access QUIZ</option><option value="feature">I want additional a feature</option><option value="help">I'm confused how to answer</option><option value="issue">there is problem with your site</option><option value="other">Other issue</option></select></div>
+                                
+                            </div>
+                        
+                            <div class="mb-2 text-primary-700">
+                                <label class="flex items-center space-x-2 text-xl font-semibold">
+                                    <span>Any Feedback?</span>
+                                    
+                                        <span class="px-2 py-1 text-xs font-medium leading-none text-yellow-900 bg-yellow-200 rounded-full">Additional</span>
+                                    
+                                </label>
+                                <p></p>
+                                <div class="p-1"><textarea name="comment" rows="5" required=""></textarea></div>
+                                
+                            </div>
+                        
+                            <div class="mb-2 text-primary-700">
+                                <label class="flex items-center space-x-2 text-xl font-semibold">
+                                    <span>Type your email address here?</span>
+                                    
+                                        <span class="px-2 py-1 text-xs font-medium leading-none text-yellow-900 bg-yellow-200 rounded-full">Required</span>
+                                    
+                                </label>
+                                <p></p>
+                                <div class="p-1"><input type="email" name="email" value="" placeholder="email@gmail.com" required=""></div>
+                                
+                            </div>
+                        
+            
+                        <button class="inline-flex items-center justify-center w-full px-8 py-4 text-2xl font-medium leading-6 text-white rounded-full button-press bg-primary-500 drop-shadow-lg" type="submit">
+                            Submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+    
+    
+    
+    
+    
+    
+        </main>
+    
         
         
-   <p>Any Feedback?</p>
+   
           
 
 
@@ -67,6 +136,7 @@
             
          
         </ul>
+        <p>&copy; 2024 The Dream Team. All rights reserved.</p>
     </footer>
 
     <!-- Font Awesome kit -->
