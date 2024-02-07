@@ -82,7 +82,7 @@ body {
 }
 
 .rounded-full {
-  border-radius: 0px;
+  border-radius: 6px;
 }
 .justify-center {
   justify-content: center;
@@ -119,8 +119,7 @@ button, input, optgroup, select, textarea {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-  vertical-align: top;
-  margin-top: 0;
+ margin-bottom: 3rem;
 }
 
 .mb-2 {
