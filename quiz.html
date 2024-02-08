@@ -30,10 +30,33 @@
     <div class="answer-section row p-4">
         <div class="guess-submit mt-5">
             <div class="row">
-                <input class="form-control col-md-6" type="text" id="answer-box" placeholder="Answer here!">
-                <button class="btn btn-primary col-md-6" id="sub-btn"><span>Submit Answer</span></button>
+
+                <!--
+                < Donal - changed type from text to number  input id="answer-box" type="number">            
+                -->
+                <input class="form-control col-md-6" type="number" id="answerbox" placeholder="0">
+                <!-- Donal data-type="submit" -->
+                <button data-type="submit" class="btn btn-primary col-md-6" id="sub-btn"><span>Submit Answer</span></button>
+                <button data-type="start" class="btn btn-primary col-md-6" id="sub-btn"><span>Start</span></button>
+
             </div>
         </div>
+
+
+    <!-- Group Score Box -->
+    <div class="group-score-box d-flex flex-column align-items-center justify-content-center mt-3 col-md-6 col-sm-12">
+        <span class="correct-answer-box mb-2" id="cab">This is the correct answer box</span>
+        <span class="correct-score-box mb-2" id="csb">Correct score = []</span>
+        <span class="wrong-score-box mb-2" id="wsb">Wrong score = []</span>
+        <button class="btn btn-primary">Next</button>
+    </div>
+
+
+
+
+
+    
+
     </div>
     <footer class="fixed-bottom bg-light d-flex justify-content-around align-items-center p-2">
         <a href="https://www.twitter.com/" target="_blank" rel="noopener" aria-label="Visit our Twitter page (opens in a new tab)">
