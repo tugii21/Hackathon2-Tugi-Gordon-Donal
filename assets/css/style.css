@@ -5,6 +5,7 @@ body {
   }
   nav {
     font-family: 'Bebas Neue', sans-serif;
+    margin-bottom: 5px;
   
   }
   .quiz-button {
@@ -33,6 +34,7 @@ body {
    border-style: ridge;
    border-color: #4682B4;
    border-width: 5px;
+   margin: 5px;
     
     background-color: yellow;
   }
