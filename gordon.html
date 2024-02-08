@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-main
     <title>The Dream Team Trivia Quiz</title>
     <!--this is favicon-->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
@@ -19,6 +18,8 @@ main
         <a class="navbar-brand active" href="quiz.html">Play Quiz</a>
         <a class="navbar-brand " href="feedback.html">Feedback</a>
       </nav>
+      
+      
       <div class="question-box text-center">
         <h2 id="question">What is the capital of France?</h2>
         <button class="btn btn-primary answer-btn" id="answer1">Paris</button>
@@ -28,20 +29,22 @@ main
 
 
 
-        # these are temporary divs for testing
-        <div style="color:blue; background-color:red" id="content1"></div>
-        <div id="content"></div>
-        <div id="content2"></div>
-        <div style="color:blue; background-color:aqua; width: 50%" id="content3"></div>
-        <div id="content4"></div>
-        <div id="content5"></div>
-        <div id="content6"></div>
+        
 
 
-        <button class="submit-button">Submit Answer</button>
+        <button class="submit-button" id="sub-btn">Submit Answer</button>
+
+<div class="group-score-box d-flex align-items-center justify-content-center col-md-6 col-sm-12">
+        <span class="correct-answer-box" id="cab"> This is the correct answer box</span>
+
+        <span class="correct-score-box" id="csb">correct score = []</span>
     
-    
+        <span class="wrong-score-box" id="wsb">Wrong score = []</span>
+    </div>
 
+    <div>
+        <button>Next</button>
+    </div>
 
     </div>
     <footer class="fixed-bottom bg-light d-flex justify-content-around align-items-center p-2">
