@@ -1,31 +1,11 @@
-/* <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz API Sandbox</title>
-</head>
-
-<body>
-    <div style="color:blue; background-color:red" id="content1"></div>
-    <div id="content"></div>
-    <div id="content2"></div>
-    <div style="color:blue; background-color:aqua; width: 50%" id="content3"></div>
-    <div id="content4"></div>
-    <div id="content5"></div>
-    <div id="content6"></div>
-</body>
-
-
-*/
-
 /*
 wait for the page/DOM to load
 add event listeners
 */
+/*
 document.addEventListener("DOMContentLoaded", function () {
     let buttons = document.getElementsByTagName("button");
+    console.log(buttons);
     //for (let i=0; i < buttons.length; i++) - traditional, more explicit (clearer?) syntax
     for (let button of buttons) {
         // iterate through array of buttons and add event listener to each button
@@ -39,7 +19,47 @@ document.addEventListener("DOMContentLoaded", function () {
                     //runGame(gameType);
                     //alert(`You clicked ${gameType}`);                
                 }
-            }*/
+            }
+            )
+        }
+    });
+*/
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    let buttons = document.getElementsByTagName("button");
+    console.log(buttons);
+    //for (let i=0; i < buttons.length; i++) - traditional, more explicit (clearer?) syntax
+    for (let button of buttons) {
+        // iterate through array of buttons and add event listener to each button
+        button.addEventListener("click", function () {              // startQuiz() /*
+            if (this.getAttribute("data-type") === "start") {
+                startQuiz();
+            }  else if (this.getAttribute("data-type") === "submit") {
+                    //checkAnswer();
+                    cab.style.display = 'block';
+                    let userAnswer = getUserAnswer();
+                    console.log("checkAnswer test");
+                    console.log("checkAnswer test" + userAnswer);
+                    if (checkAnswer(userAnswer, 3)) {
+                        incrementCorrectCount();
+                    } else {
+                        incrementWrongCount();
+                    }
+                    //displayCorrectAnswer(data[i].correctAnswer);
+                    cab.style.display = 'block';
+                    setTimeout(200000);
+
+                    startQuiz();
+
+//                    runQuiz(data);
+                } else {
+                    startQuiz();
+//                    runQuiz(data);                             
+                }
+            }   // */
         )
     }
 });
@@ -110,6 +130,8 @@ function runQuiz(data) {
     //document.getElementById("content3").innerText = "Hi Hi World again";
     console.log(data);
     //const q = data[0].question.text;
+    document.getElementById("wsb").innerText = 0;
+    document.getElementById("csb").innerText = 0;
 
     for (let i = 0; i < data.length; i++) {
         displayQuestion(data[i].question.text);
@@ -126,18 +148,20 @@ function runQuiz(data) {
         console.log("test: " + shuffledIndex);
         displayCorrectAnswer(data[i].correctAnswer);
 
-        displayAnswerOptions(answerArray);
-        //   let userAnswer = getUserAnswer();
+        displayAnswerOptions(answerArray, shuffledIndex);
+        let userAnswer = getUserAnswer();
+        console.log("getuserAnswer 2: " + userAnswer);
+
         // create answer array containing correct & incorrect answers:
 
         // shuffle array of numbers, so that answers will be displayed randomly to user.
 
         // this needs to be changed - the correct answer is always the last element currently.
-        if (checkAnswer(userAnswer, 3)) {
+       /* if (checkAnswer(userAnswer, 3)) {
             incrementCorrectCount();
         } else {
             incrementWrongCount();
-        }
+        }*/
         // user selects 'next question' so that loop doesn't run through all questions instantly
     }
 }
@@ -147,36 +171,44 @@ function displayQuestion(q) {
     document.getElementById("question").innerText = "Question: " + q;  // access the actual question: object = question -> text = parameter.
 };
 
-function displayAnswerOptions(p) {
+function displayAnswerOptions(p, index) {
     // these need to be randomised
     // and displayed in indivdual boxes numbered 1 to 4
     //console.log(p);
-    document.getElementById("answer1").innerText = p[0];
-    document.getElementById("answer2").innerText = p[1];
-    document.getElementById("answer3").innerText = p[2];
-    document.getElementById("answer4").innerText = p[3];
+    document.getElementById("answer1").innerText = p[index[0]];
+    document.getElementById("answer2").innerText = p[index[1]];
+    document.getElementById("answer3").innerText = p[index[2]];
+    document.getElementById("answer4").innerText = p[index[3]];
 
 };
 
 function displayCorrectAnswer(q) {
     document.getElementById("cab").innerText = "Correct Answer: " + q;
+    cab.style.display = 'none';
+
 };
 
 function getUserAnswer() {
     // let answer = document.getElementById("answer").textContent;
-    let userAnswer = parseInt(document.getElementById("answerbox").textContent);
+   // document.getElementById("answerbox").value = 1;   // temporary entering user answer via js code
+    let userAnswer = parseInt(document.getElementById("answerbox").value);
+    console.log("getuserAnswer: " + userAnswer);
     //       document.getElementById("content6").textContent = "Answer Choice: " + q + " " + p;
     // decrement User Answer (1-4) by 1 to make it array point (0-3)
     userAnswer--;
     return userAnswer;
 }
 
-function checkAnswer() {
+function checkAnswer(p, q) {
     //  is user answer = data[i].correctAnswer
     // return 0 == incorrect; 1 == correct
     //     let userAnswer = parseInt(document.getElementById("answer-box").value);
-    return 1;
-
+    if (p===q){
+        return 1;
+    } else {
+        return 0;
+    }
+        
 
     /*
      let userAnswer = parseInt(document.getElementById("answer-box").value);
@@ -195,15 +227,15 @@ function checkAnswer() {
 }
 function incrementCorrectCount() {
     console.log("correct");
-    //   let oldScore = parseInt(document.getElementById("score").innerText);
-    //document.getElementById("score").innerText = ++oldScore;
+    let oldScore = parseInt(document.getElementById("csb").innerText);
+    document.getElementById("csb").innerText = ++oldScore;
 
 }
 function incrementWrongCount() {
     console.log("wrong");
-    //      let oldScore = parseInt(document.getElementById("incorrect").innerText);
-    //document.getElementById("incorrect").innerText = ++oldScore;
-
+    let oldScore = parseInt(document.getElementById("wsb").innerText);
+    console.log(oldScore);
+    document.getElementById("wsb").innerText = ++oldScore;
 }
 
 // Function to shuffle an array using Fisher-Yates algorithm
