@@ -17,6 +17,10 @@
     <div id="content6"></div>
 </body>
 */
+
+<script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous"></script>
+
+
 <script>
     /*
     wait for the page/DOM to load
