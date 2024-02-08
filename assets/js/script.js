@@ -116,11 +116,14 @@ function runQuiz(data) {
 //        const myArray = data[i].incorrectAnswers.split(", ");
    // console.log(p);
         displayAnswerOptions(data[i].correctAnswer, data[i].incorrectAnswers);
-        getUserAnswer();
-
+        let userAnswer = getUserAnswer();
+        // create answer array containing correct & incorrect answers:
+        answerArray = data[i].incorrectAnswers;
+        answerArray[answerArray.length] = data[i].correctAnswer;
+        console.log(answerArray);
         displayCorrectAnswer(data[i].correctAnswer);
-
-        if (checkAnswer()) {
+// this needs to be changed - the correct answer is always the last element currently.
+        if (checkAnswer(userAnswer, 3)) {
             incrementCorrectCount();
         } else {
             incrementWrongCount();
@@ -132,30 +135,30 @@ function runQuiz(data) {
 function displayQuestion(q) {
     //        document.getElementById("content2").innerText = "Question: " + data[0].question.text;  // access the actual question: object = question -> text = parameter.
     document.getElementById("question").innerText = "Question: " + q;  // access the actual question: object = question -> text = parameter.
-    // document.getElementById("content2").textContent = "Question: " + q; 
 };
 
 function displayAnswerOptions(q, p) {
     // these need to be randomised
     // and displayed in indivdual boxes numbered 1 to 4
-   // let r = p;
     console.log(p);
-    document.getElementById("answer1").innerText = q ;
     document.getElementById("answer2").innerText = p[0] ;
     document.getElementById("answer3").innerText = p[1] ;
     document.getElementById("answer4").innerText = p[2] ;
-
-    //       document.getElementById("content6").textContent = "Answer Choice: " + q + " " + p;
-
+    document.getElementById("answer1").innerText = q ;
+ 
 };
 
 function displayCorrectAnswer(q) {
-    document.getElementById("content4").innerText = "correctAnswer: " + q;
+    document.getElementById("cab").innerText = "Correct Answer: " + q;
 };
 
 function getUserAnswer() {
-    //        let answer = document.getElementById("answer").textContent;
-    //        return answer;
+    // let answer = document.getElementById("answer").textContent;
+    let userAnswer = parseInt(document.getElementById("answerBox").innerText);
+    //       document.getElementById("content6").textContent = "Answer Choice: " + q + " " + p;
+    // decrement User Answer (1-4) by 1 to make it array point (0-3)
+    userAnswer--; 
+    return userAnswer;
 }
 
 function checkAnswer() {
@@ -163,6 +166,22 @@ function checkAnswer() {
     // return 0 == incorrect; 1 == correct
     //     let userAnswer = parseInt(document.getElementById("answer-box").value);
     return 1;
+
+   
+   /*
+    let userAnswer = parseInt(document.getElementById("answer-box").value);
+    let calculatedAnswer = calculateCorrectAnswer();
+    let isCorrect = userAnswer === calculatedAnswer[0];
+    //let gt = gameType;
+    let operator = document.getElementById("operator").innerText;
+    //let operator = this.getAttribute("data-type"); 
+    if (isCorrect) {
+        alert("Well Done, Correct.");
+        incrementScore();
+    } else {
+        alert(`Doh! ${userAnswer} ?? Wrong! can you ${operator} ? oh well, the correct answer is ${calculatedAnswer[0]}`)
+        incrementWrongAnswer();
+    }*/
 }
 function incrementCorrectCount() {
     console.log("correct");
