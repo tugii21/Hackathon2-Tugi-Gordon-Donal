@@ -50,12 +50,13 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                     //displayCorrectAnswer(data[i].correctAnswer);
                     cab.style.display = 'block';
-                    setTimeout(200000);
+                    setTimeout(2000000);
 
                     startQuiz();
 
 //                    runQuiz(data);
                 } else {
+                    cab.style.display = 'block';
                     startQuiz();
 //                    runQuiz(data);                             
                 }
@@ -73,6 +74,8 @@ document.addEventListener("DOMContentLoaded", function () {
        });
 */
 async function startQuiz() {
+    setTimeout(2000000);
+
     console.log("test");
     const response = await fetch('https://the-trivia-api.com/v2/questions');
     const data = await response.json();
@@ -132,6 +135,10 @@ function runQuiz(data) {
     //const q = data[0].question.text;
     document.getElementById("wsb").innerText = 0;
     document.getElementById("csb").innerText = 0;
+    csb.style.display = 'none';
+    wsb.style.display = 'none';
+    next.style.display = 'none';
+//    sub-btn.style.display = 'none';
 
     for (let i = 0; i < data.length; i++) {
         displayQuestion(data[i].question.text);
@@ -151,6 +158,21 @@ function runQuiz(data) {
         displayAnswerOptions(answerArray, shuffledIndex);
         let userAnswer = getUserAnswer();
         console.log("getuserAnswer 2: " + userAnswer);
+
+        /*
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting and reloading the page
+            
+            const userInput = document.getElementById('userInput').value;
+            console.log("User input:", userInput);
+            
+            // Continue with your program logic here using the userInput
+            
+            // For demonstration purposes, let's alert the user with their input
+            alert("You entered: " + userInput);
+          });
+
+*/
 
         // create answer array containing correct & incorrect answers:
 
