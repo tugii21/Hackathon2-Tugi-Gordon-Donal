@@ -284,3 +284,27 @@ console.log(shuffledIndex);
 
 
 
+
+
+
+
+//below javascript code makes all picture on front page slides 
+let slider = document.querySelector('.slider');
+  let slides = document.querySelectorAll('.slide');
+  let currentIndex = 0;
+  let slideWidth = slides[0].clientWidth;
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 0.5) % slides.length;
+    updateSlider();
+  }
+
+  function updateSlider() {
+    slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+  }
+
+  setInterval(nextSlide, 3000); // Change slide every 3 seconds
+
+
+
+
