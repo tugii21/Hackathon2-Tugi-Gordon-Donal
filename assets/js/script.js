@@ -75,11 +75,8 @@ startQuiz();
 function displayData(data) {
     setTimeout(20000)
     //document.getElementById("content").innerText = "Question Topic: " + data[0].tags;
-
     //document.getElementById("content5").innerText = "incorrectAnswers: " + data[0].incorrectAnswers;
-
     //document.getElementById("content2").innerText = "Question: " + data[0].question.text;  // access the actual question: object = question -> text = parameter.
-
     //document.getElementById("content").innerText = data[0].question;
     //document.getElementById("content").innerText = data[1].category;
     //document.getElementById("content").innerText = data["id"];
@@ -116,6 +113,8 @@ function runQuiz(data) {
 
     for (let i = 0; i < data.length; i++) {
         displayQuestion(data[i].question.text);
+//        const myArray = data[i].incorrectAnswers.split(", ");
+   // console.log(p);
         displayAnswerOptions(data[i].correctAnswer, data[i].incorrectAnswers);
         getUserAnswer();
 
@@ -139,7 +138,13 @@ function displayQuestion(q) {
 function displayAnswerOptions(q, p) {
     // these need to be randomised
     // and displayed in indivdual boxes numbered 1 to 4
-    document.getElementById("answer1").innerText = "Answer Choice: " + q + " " + p;
+   // let r = p;
+    console.log(p);
+    document.getElementById("answer1").innerText = q ;
+    document.getElementById("answer2").innerText = p[0] ;
+    document.getElementById("answer3").innerText = p[1] ;
+    document.getElementById("answer4").innerText = p[2] ;
+
     //       document.getElementById("content6").textContent = "Answer Choice: " + q + " " + p;
 
 };
