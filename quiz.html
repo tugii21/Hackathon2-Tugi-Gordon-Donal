@@ -13,31 +13,19 @@
 </head>
 </head>
 <body class="d-flex align-items-center justify-content-center" style="height: 100vh;">
-    <nav class="navbar fixed-top d-flex align-items-center justify-content-center navbar-light bg-0 m-1">
+    <nav class="navbar fixed-top d-flex align-items-center justify-content-center navbar-dark bg-2 m-1">
         <a class="navbar-brand" href="index.html">Home</a>
         <a class="navbar-brand active" href="quiz.html">Play Quiz</a>
         <a class="navbar-brand" href="feedback.html">Feedback</a>
       </nav>
 
-    <main class="container justify-content-center align-items-center">
-       
-        <div class="row align-items-center justify-content-center">
-            
-                <div class="question-box m-3">This is the Question Box</div>
-           
-        </div> 
-        
-    <div class="row align-items-center justify-content-center">
-        
-        <div class="col-2 answer-box m-3" id="ab1"><button>This is Answer box 1</button></div>
-        <div class="col-2 answer-box m-3" id="ab2"><button>This is Answer box 1</button></div>
-        <div class="col-2 answer-box m-3" id="ab3"><button>This is Answer box 1</button></div>
-        <div class="col-2 answer-box m-3" id="ab4"><button>This is Answer box 1</button></div>
-        <div class="correct-answer" id="correct"></div>
-        <div class="wrong-answer" id="wrong"></div>
-    
+      <div class="question-box text-center">
+        <h2>What is the capital of France?</h2>
+        <button class="btn btn-primary answer-btn" id="answer1">Paris</button>
+        <button class="btn btn-primary answer-btn" id="answer2">Berlin</button>
+        <button class="btn btn-primary answer-btn" id="answer3">Madrid</button>
+        <button class="btn btn-primary answer-btn" id="answer4">Rome</button>
     </div>
-    </main>
 
     <footer class="fixed-bottom bg-light d-flex justify-content-around align-items-center p-2">
         
@@ -68,6 +56,4 @@
     <!-- Font Awesome kit -->
     <script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous"></script>
 </body>
-</html>
-</html>
 </html>
