@@ -68,15 +68,15 @@ async function startQuiz() {
 
 console.log("test");
 //   runQuiz();
-document.getElementById("content1").innerText = "Hi World";
+//document.getElementById("content1").innerText = "Hi World";
 //   startQuiz(data);
 startQuiz();
 
 function displayData(data) {
     setTimeout(20000)
-    document.getElementById("content").innerText = "Question Topic: " + data[0].tags;
+    //document.getElementById("content").innerText = "Question Topic: " + data[0].tags;
 
-    document.getElementById("content5").innerText = "incorrectAnswers: " + data[0].incorrectAnswers;
+    //document.getElementById("content5").innerText = "incorrectAnswers: " + data[0].incorrectAnswers;
 
     //document.getElementById("content2").innerText = "Question: " + data[0].question.text;  // access the actual question: object = question -> text = parameter.
 
@@ -108,9 +108,9 @@ function displayData(data) {
 function runQuiz(data) {
     // document.getElementById("answer-box").value = "";
     // document.getElementById("answer-box").focus();
-    document.getElementById("content3").innerText = "Hi World again";
+    //document.getElementById("content3").innerText = "Hi World again";
     // startQuiz();
-    document.getElementById("content3").innerText = "Hi Hi World again";
+    //document.getElementById("content3").innerText = "Hi Hi World again";
     console.log(data);
     //const q = data[0].question.text;
 
