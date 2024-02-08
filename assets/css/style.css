@@ -31,6 +31,10 @@ body {
     font-family: 'Bebas Neue', sans-serif;
     font-size: xx-large;
   }
+
+  .submit-button {
+    background-color: aqua;
+  }
   /* Footer */
 .social-network  {
   font-size: 160%;
