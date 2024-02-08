@@ -1,8 +1,7 @@
 /*style.css*/
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Honk&display=swap');
 body {
-  background: linear-gradient(to bottom, #171616, #898585); !important;
-  }
+  background: linear-gradient(to bottom, #171616, #898585);
   nav {
     font-family: 'Bebas Neue', sans-serif;
     margin-bottom: 5px;
@@ -275,6 +274,4 @@ textarea{
   border-radius: 5px;
   cursor: pointer;
 }
-
-
-
+}
