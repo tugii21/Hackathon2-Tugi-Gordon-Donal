@@ -113,16 +113,26 @@ function runQuiz(data) {
 
     for (let i = 0; i < data.length; i++) {
         displayQuestion(data[i].question.text);
-//        const myArray = data[i].incorrectAnswers.split(", ");
-   // console.log(p);
-        displayAnswerOptions(data[i].correctAnswer, data[i].incorrectAnswers);
-        let userAnswer = getUserAnswer();
-        // create answer array containing correct & incorrect answers:
+        //        const myArray = data[i].incorrectAnswers.split(", ");
+        // console.log(p);
+        //        displayAnswerOptions(data[i].correctAnswer, data[i].incorrectAnswers);
         answerArray = data[i].incorrectAnswers;
         answerArray[answerArray.length] = data[i].correctAnswer;
-        console.log(answerArray);
+        console.log("test: " + answerArray);
+
+        const answerIndex = [0, 1, 2, 3];
+        // Shuffle the array
+        const shuffledIndex = shuffleArray(answerIndex);
+        console.log("test: " + shuffledIndex);
         displayCorrectAnswer(data[i].correctAnswer);
-// this needs to be changed - the correct answer is always the last element currently.
+
+        displayAnswerOptions(answerArray);
+        //   let userAnswer = getUserAnswer();
+        // create answer array containing correct & incorrect answers:
+
+        // shuffle array of numbers, so that answers will be displayed randomly to user.
+
+        // this needs to be changed - the correct answer is always the last element currently.
         if (checkAnswer(userAnswer, 3)) {
             incrementCorrectCount();
         } else {
@@ -137,15 +147,15 @@ function displayQuestion(q) {
     document.getElementById("question").innerText = "Question: " + q;  // access the actual question: object = question -> text = parameter.
 };
 
-function displayAnswerOptions(q, p) {
+function displayAnswerOptions(p) {
     // these need to be randomised
     // and displayed in indivdual boxes numbered 1 to 4
-    console.log(p);
-    document.getElementById("answer2").innerText = p[0] ;
-    document.getElementById("answer3").innerText = p[1] ;
-    document.getElementById("answer4").innerText = p[2] ;
-    document.getElementById("answer1").innerText = q ;
- 
+    //console.log(p);
+    document.getElementById("answer1").innerText = p[0];
+    document.getElementById("answer2").innerText = p[1];
+    document.getElementById("answer3").innerText = p[2];
+    document.getElementById("answer4").innerText = p[3];
+
 };
 
 function displayCorrectAnswer(q) {
@@ -154,10 +164,10 @@ function displayCorrectAnswer(q) {
 
 function getUserAnswer() {
     // let answer = document.getElementById("answer").textContent;
-    let userAnswer = parseInt(document.getElementById("answerBox").innerText);
+    let userAnswer = parseInt(document.getElementById("answerbox").textContent);
     //       document.getElementById("content6").textContent = "Answer Choice: " + q + " " + p;
     // decrement User Answer (1-4) by 1 to make it array point (0-3)
-    userAnswer--; 
+    userAnswer--;
     return userAnswer;
 }
 
@@ -167,21 +177,21 @@ function checkAnswer() {
     //     let userAnswer = parseInt(document.getElementById("answer-box").value);
     return 1;
 
-   
-   /*
-    let userAnswer = parseInt(document.getElementById("answer-box").value);
-    let calculatedAnswer = calculateCorrectAnswer();
-    let isCorrect = userAnswer === calculatedAnswer[0];
-    //let gt = gameType;
-    let operator = document.getElementById("operator").innerText;
-    //let operator = this.getAttribute("data-type"); 
-    if (isCorrect) {
-        alert("Well Done, Correct.");
-        incrementScore();
-    } else {
-        alert(`Doh! ${userAnswer} ?? Wrong! can you ${operator} ? oh well, the correct answer is ${calculatedAnswer[0]}`)
-        incrementWrongAnswer();
-    }*/
+
+    /*
+     let userAnswer = parseInt(document.getElementById("answer-box").value);
+     let calculatedAnswer = calculateCorrectAnswer();
+     let isCorrect = userAnswer === calculatedAnswer[0];
+     //let gt = gameType;
+     let operator = document.getElementById("operator").innerText;
+     //let operator = this.getAttribute("data-type"); 
+     if (isCorrect) {
+         alert("Well Done, Correct.");
+         incrementScore();
+     } else {
+         alert(`Doh! ${userAnswer} ?? Wrong! can you ${operator} ? oh well, the correct answer is ${calculatedAnswer[0]}`)
+         incrementWrongAnswer();
+     }*/
 }
 function incrementCorrectCount() {
     console.log("correct");
@@ -195,5 +205,24 @@ function incrementWrongCount() {
     //document.getElementById("incorrect").innerText = ++oldScore;
 
 }
+
+// Function to shuffle an array using Fisher-Yates algorithm
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+// shuffle array of numbers, so that answers will be displayed randomly to user.
+const answerIndex = [0, 1, 2, 3];
+
+// Shuffle the array
+const shuffledIndex = shuffleArray(answerIndex);
+
+console.log(shuffledIndex);
+
+
 
 
