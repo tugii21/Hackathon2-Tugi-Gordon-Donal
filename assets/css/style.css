@@ -1,7 +1,7 @@
 /*style.css*/
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Honk&display=swap');
 body {
-  background-color: rgb(59, 105, 146) !important;
+  background: linear-gradient(to bottom, #171616, #898585); !important;
   }
   nav {
     font-family: 'Bebas Neue', sans-serif;
@@ -30,6 +30,11 @@ body {
   .question-box {
     font-family: 'Bebas Neue', sans-serif;
     font-size: xx-large;
+   border-style: ridge;
+   border-color: #4682B4;
+   border-width: 5px;
+    
+    background-color: yellow;
   }
 
   .submit-button {
