@@ -29,6 +29,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 document.addEventListener("DOMContentLoaded", function () {
+    const response = await fetch('https://the-trivia-api.com/v2/questions');
+    const data = await response.json();
+
+    console.log("test");
     let buttons = document.getElementsByTagName("button");
     console.log(buttons);
     //for (let i=0; i < buttons.length; i++) - traditional, more explicit (clearer?) syntax
@@ -77,9 +81,9 @@ async function startQuiz() {
     setTimeout(2000000);
 
     console.log("test");
-    const response = await fetch('https://the-trivia-api.com/v2/questions');
-    const data = await response.json();
-    console.log("test");
+//    const response = await fetch('https://the-trivia-api.com/v2/questions');
+  //  const data = await response.json();
+    //console.log("test");
     if (response.ok) {
         console.log(data);
     }

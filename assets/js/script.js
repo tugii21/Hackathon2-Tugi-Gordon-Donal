@@ -29,6 +29,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 document.addEventListener("DOMContentLoaded", function () {
+//    const response =  fetch('https://the-trivia-api.com/v2/questions');
+//    const response = await fetch('https://the-trivia-api.com/v2/questions');
+//    const data =  response.json();
+  //  if (response.ok) {
+    //    console.log(data);
+    //}
+    data = startQuiz();
+    displayData(data);
+
+    //const data = await response.json();
+    console.log("test5");
     let buttons = document.getElementsByTagName("button");
     console.log(buttons);
     //for (let i=0; i < buttons.length; i++) - traditional, more explicit (clearer?) syntax
@@ -36,7 +47,8 @@ document.addEventListener("DOMContentLoaded", function () {
         // iterate through array of buttons and add event listener to each button
         button.addEventListener("click", function () {              // startQuiz() /*
             if (this.getAttribute("data-type") === "start") {
-                startQuiz();
+                runQuiz(data);
+//                startQuiz();
             }  else if (this.getAttribute("data-type") === "submit") {
                     //checkAnswer();
                     cab.style.display = 'block';
@@ -51,72 +63,60 @@ document.addEventListener("DOMContentLoaded", function () {
                     //displayCorrectAnswer(data[i].correctAnswer);
                     cab.style.display = 'block';
                     setTimeout(2000000);
+                    runQuiz(data);
 
-                    startQuiz();
-
-//                    runQuiz(data);
+//                    startQuiz();
                 } else {
                     cab.style.display = 'block';
-                    startQuiz();
-//                    runQuiz(data);                             
+//                    startQuiz();
+                   runQuiz(data);                             
                 }
             }   // */
         )
     }
 });
+async function startQuiz() {
+    setTimeout(2000000);
+    console.log("test");
 // fetch("https://the-trivia-api.com/v2/session")
 // make an API call to get the questions for this quiz round
-/*   fetch('https://the-trivia-api.com/v2/questions')
+ /*  fetch('https://the-trivia-api.com/v2/questions')
        .then(response => response.json())      // then(response => response.text())
        .then(data => displayData(data))
        .catch(error => {
            console.error('Error fetching data:', error);
-       });
-*/
-async function startQuiz() {
-    setTimeout(2000000);
+       }
+       
+       );
 
-    console.log("test");
-    const response = await fetch('https://the-trivia-api.com/v2/questions');
+*/
+   const response = await fetch('https://the-trivia-api.com/v2/questions');
     const data = await response.json();
-    console.log("test");
+    console.log("test!");
     if (response.ok) {
-        console.log(data);
+       console.log(data);
     }
     console.log("test");
-    //     return data;
-    displayData(data);
+ //   displayData(data);
+    return(data);
     runQuiz(data);
 }
-
-console.log("test");
+console.log("test0");
 //   runQuiz();
 //document.getElementById("content1").innerText = "Hi World";
 //   startQuiz(data);
-startQuiz();
+//startQuiz();
 
 function displayData(data) {
     setTimeout(20000)
-    //document.getElementById("content").innerText = "Question Topic: " + data[0].tags;
-    //document.getElementById("content5").innerText = "incorrectAnswers: " + data[0].incorrectAnswers;
-    //document.getElementById("content2").innerText = "Question: " + data[0].question.text;  // access the actual question: object = question -> text = parameter.
-    //document.getElementById("content").innerText = data[0].question;
-    //document.getElementById("content").innerText = data[1].category;
-    //document.getElementById("content").innerText = data["id"];
     console.log(data.length);
     for (let i = 0; i < data.length; i++) {
         console.log(i);
         for (const key in data[i]) {
             console.log(`${key}: ${data[i][key]}`);
-            //  console.log(`${key}: ${data[0][question][0]}`);
-
-            // for (const key in data[0][question]) {
-            //console.log(`${key}: ${data[0][question][key]}`);
-            //  console.log(`${key}: ${data[0][question][0]}`);
-        }
+          }
     }
-    //setTimeout(resolve, 20);
-    //setTimeout(200)      
+    return data;
 }
 
 // });
@@ -124,15 +124,8 @@ function displayData(data) {
 /**
  * Main Quiz Loop
  */
-//    function runGame(gameType)
 function runQuiz(data) {
-    // document.getElementById("answer-box").value = "";
-    // document.getElementById("answer-box").focus();
-    //document.getElementById("content3").innerText = "Hi World again";
-    // startQuiz();
-    //document.getElementById("content3").innerText = "Hi Hi World again";
     console.log(data);
-    //const q = data[0].question.text;
     document.getElementById("wsb").innerText = 0;
     document.getElementById("csb").innerText = 0;
     csb.style.display = 'none';
@@ -142,9 +135,6 @@ function runQuiz(data) {
 
     for (let i = 0; i < data.length; i++) {
         displayQuestion(data[i].question.text);
-        //        const myArray = data[i].incorrectAnswers.split(", ");
-        // console.log(p);
-        //        displayAnswerOptions(data[i].correctAnswer, data[i].incorrectAnswers);
         answerArray = data[i].incorrectAnswers;
         answerArray[answerArray.length] = data[i].correctAnswer;
         console.log("test: " + answerArray);
