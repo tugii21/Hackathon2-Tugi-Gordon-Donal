@@ -4,8 +4,7 @@
 
  Website is fully responsive to small screen such as Galaxy Fold and Phone, Ipad Tablet, larger screen such as Laptop, Desktop.
 
-![Responsice Mockup](screenshot of mobile and ipad and laptop and desktop + drop images to under assets +images +drop=paste link to this file and update it
-    https://github.com/Snoodyk/Brushes-and-Bytes/blob/main/assets/images/amiresponsive%20image.png)
+![Responsice Mockup](https://github.com/tugii21/TheDreamTeamQuiz/blob/main/assets/images/readme/responsiveness.png)
 
 
 ## Features
@@ -15,11 +14,9 @@
   - Featured on all three pages, the full responsive navigation bar includes links to the Home, Play QUIZ and Feedback pages and it is fully responsive to mobile, and Tablets to laptop screen.
   - Menu toggle down will allow the user to easily navigate from  page to page and it is easy to revert back to main page. 
 
-![Nav Bar with Toggle](copy your images to main/assets/images/readme/paste screenshot and get link from github
-    https://github.com/Snoodyk/Brushes-and-Bytes/blob/main/assets/images/readme/header_toggledown.png)
+![Nav Bar with Toggle](https://github.com/tugii21/TheDreamTeamQuiz/blob/main/assets/images/readme/nav.png)
 
-![Nav Bar](copy your images to main/assets/images/readme/paste screenshot and get link from github
-    https://github.com/Snoodyk/Brushes-and-Bytes/blob/main/assets/images/readme/navbar.png)
+![Nav Bar](https://github.com/tugii21/TheDreamTeamQuiz/blob/main/assets/images/readme/nav.png)
 
 ## The Dream Team Trivia QUIZ
 
@@ -28,8 +25,7 @@
   - The Dream Team Trivia QUIZ is a site that any age group user hopes to play QUIZ around the world.
 The site will be targeted toward anyone who love challenges and improve their khowledge. The Dream Team Trivia QUIZ site will be useful for anyone who respects brain exercises and how they can contact the The Dream Team to discuss with any issue. 
 
-![Home Page](change below link-------?
-    https://github.com/Snoodyk/Brushes-and-Bytes/blob/main/assets/images/readme/index%20image.png)
+![Home Page](https://github.com/tugii21/TheDreamTeamQuiz/blob/main/assets/images/readme/homepage.png)
 
 
 
@@ -38,14 +34,14 @@ The site will be targeted toward anyone who love challenges and improve their kh
   - The Trivia QUIZ will display questions and answers that is ready to buy from the site. 
   - This section is useful to the user who want to brain challenge and improve their IQ level. 
 
-![Play Quiz](change below link-------?    https://github.com/Snoodyk/Brushes-and-Bytes/blob/main/assets/images/readme/gallery_image.png)
+![Play Quiz](https://github.com/tugii21/TheDreamTeamQuiz/blob/main/assets/images/readme/quizpage.png)
 
 - __Feedback__
 
   - This page allows user to write a request to us and any other issue. 
   - This section is useful for anyone any aged peope who love QUIZ game. 
 
-![Feedback](change below link-------?   https://github.com/Snoodyk/Brushes-and-Bytes/blob/main/assets/images/readme/about.png)
+![Feedback](https://github.com/tugii21/TheDreamTeamQuiz/blob/main/assets/images/readme/feedbackpage.png)
 
 
 
@@ -56,40 +52,36 @@ The site will be targeted toward anyone who love challenges and improve their kh
   - The footer section includes links to the relevant social media sites for The Dream Team. The links will open to a new tab to allow easy navigation for the user. 
   - The footer is important section that user can see our social media links.
 
-![Footer](---change this ------
-    https://github.com/Snoodyk/Brushes-and-Bytes/blob/main/assets/images/readme/footer.png)
+![Footer](https://github.com/tugii21/TheDreamTeamQuiz/blob/main/assets/images/readme/footer.png)
 
 ## Testing 
 
 The Team used Github Kanban board to communicate with testing and agile process.
 
 Our project of screenshot
-![Github Project Management Tool](https://github.com/Snoodyk/Brushes-and-Bytes/blob/main/assets/images/readme/trello.png)
-
-The Team carried out UAT (user acceptance testing) using the test cases.
-![UAT](https://github.com/Snoodyk/Brushes-and-Bytes/blob/main/assets/images/readme/testcase.png)
+![github project management tool](https://github.com/tugii21/TheDreamTeamQuiz/blob/main/assets/images/readme/TrelloGITHUB.png)
 
 Our project on Mobile
-![ResponsiveonMob](https://github.com/Snoodyk/Brushes-and-Bytes/blob/main/assets/images/readme/amiresponsive_index.png)
+![ResponsiveonMob](https://github.com/tugii21/TheDreamTeamQuiz/blob/main/assets/images/readme/responsiveness.png)
 
 Our project on Tablet
-![ResponsiveonTab](https://github.com/Snoodyk/Brushes-and-Bytes/blob/main/assets/images/readme/amiresponsive_gallery.png)
+![ResponsiveonTab](https://github.com/tugii21/TheDreamTeamQuiz/blob/main/assets/images/readme/responsiveness.png)
 
 Our project on Laptop
-![ResponsiveonLap](https://github.com/Snoodyk/Brushes-and-Bytes/blob/main/assets/images/readme/amiresponsive_contact.png)
+![ResponsiveonLap](hhttps://github.com/tugii21/TheDreamTeamQuiz/blob/main/assets/images/readme/responsiveness.png)
 
 
 ### Validator Testing 
 
 - HTML
-  - No errors were returned when passing through the official [W3C validator](-------change this ------https://validator.w3.org/nu/?doc=https%3A%2F%2Fsnoodyk.github.io%2FBrushes-and-Bytes%2F)
+  - No errors were returned when passing through the official [W3C validator](https://github.com/tugii21/TheDreamTeamQuiz/blob/main/assets/images/readme/HTMTESTING.png)
 - CSS
-  - No errors were found when passing through the official, but small errors found on bootstrap library [(Jigsaw) validator](-------change this --------https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fsnoodyk.github.io%2FBrushes-and-Bytes%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+  - 20 errors were found when passing through the official, but small errors found on bootstrap library [(Jigsaw) validator](https://github.com/tugii21/TheDreamTeamQuiz/blob/main/assets/images/readme/validator.png)
 
 
 ### Unfixed Bugs
 
-None.
+
  
 
 ## Deployment
@@ -101,16 +93,18 @@ We deployed the project to GitHub cloud.
   - From the source section drop-down menu, select the Master Branch
   - Once the main branch has been selected, the page will be automatically be refreshed with a detailed ribbon display to indicate the successful deployment. 
 
-The live link can be found here - https://tugii21.github.io/TheDreamTeamQuiz/quiz.html
+The live link can be found here - https://tugii21.github.io/TheDreamTeamQuiz/index.html
 
 ## Credits 
 
-Main structure of Quiz page reference used from love Maths project template. Also used repositories and tutorials from GITHUB and codeinstitute
+Main structure of Quiz page reference used from CODE INSTITUTE template. Also used repositories and tutorials from GITHUB and codeinstitute
 youtube tutorials
 Google search.from 
+chatGPT
 https://www.craiyon.com/   ai art
 https://fontawesome.com/
 https://www.w3schools.com
+https://fonts.google.com/
 
 
 ### Content 
@@ -124,7 +118,7 @@ https://www.w3schools.com
 ### Media
 
 - ???????????????
-- The images used for the Gallery page were taken from https://www.craiyon.com/   ai art
+- The images used for the Home page were taken from https://www.craiyon.com/   ai art
 
 ## User Stories
 
