@@ -1,180 +1,91 @@
-/* <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz API Sandbox</title>
-</head>
-
-<body>
-    <div style="color:blue; background-color:red" id="content1"></div>
-    <div id="content"></div>
-    <div id="content2"></div>
-    <div style="color:blue; background-color:aqua; width: 50%" id="content3"></div>
-    <div id="content4"></div>
-    <div id="content5"></div>
-    <div id="content6"></div>
-</body>
-
-
-*/
-
-/*
-wait for the page/DOM to load
-add event listeners
-*/
 document.addEventListener("DOMContentLoaded", function () {
-    let buttons = document.getElementsByTagName("button");
-    //for (let i=0; i < buttons.length; i++) - traditional, more explicit (clearer?) syntax
+    let buttons = document.querySelectorAll(".answer-btn");
     for (let button of buttons) {
-        // iterate through array of buttons and add event listener to each button
-        button.addEventListener("click", startQuiz() /*function () {
-                if (this.getAttribute("data-type") === "submit") {
-                    checkAnswer();
-                    //alert("You clicked submit");
-                } else {
-                    startQuiz();
-                    //let gameType = this.getAttribute("data-type");
-                    //runGame(gameType);
-                    //alert(`You clicked ${gameType}`);                
-                }
-            }*/
-        )
+        button.addEventListener("click", checkAnswer);
     }
+
+    startQuiz();
 });
-// fetch("https://the-trivia-api.com/v2/session")
-// make an API call to get the questions for this quiz round
-/*   fetch('https://the-trivia-api.com/v2/questions')
-       .then(response => response.json())      // then(response => response.text())
-       .then(data => displayData(data))
-       .catch(error => {
-           console.error('Error fetching data:', error);
-       });
-*/
+
+let questions = [];
+let currentQuestionIndex = 0;
+let correctCount = 0;
+let wrongCount = 0;
+
 async function startQuiz() {
-    console.log("test");
     const response = await fetch('https://the-trivia-api.com/v2/questions');
     const data = await response.json();
-    console.log("test");
+
     if (response.ok) {
-        console.log(data);
+        questions = data;
+        runQuiz(currentQuestionIndex);
     }
-    console.log("test");
-    //     return data;
-    displayData(data);
-    runQuiz(data);
 }
 
-console.log("test");
-//   runQuiz();
-//document.getElementById("content1").innerText = "Hi World";
-//   startQuiz(data);
-startQuiz();
+function runQuiz(questionIndex) {
+    const currentQuestion = questions[questionIndex];
 
-function displayData(data) {
-    setTimeout(20000)
-    //document.getElementById("content").innerText = "Question Topic: " + data[0].tags;
-    //document.getElementById("content5").innerText = "incorrectAnswers: " + data[0].incorrectAnswers;
-    //document.getElementById("content2").innerText = "Question: " + data[0].question.text;  // access the actual question: object = question -> text = parameter.
-    //document.getElementById("content").innerText = data[0].question;
-    //document.getElementById("content").innerText = data[1].category;
-    //document.getElementById("content").innerText = data["id"];
-    console.log(data.length);
-    for (let i = 0; i < data.length; i++) {
-        console.log(i);
-        for (const key in data[i]) {
-            console.log(`${key}: ${data[i][key]}`);
-            //  console.log(`${key}: ${data[0][question][0]}`);
-
-            // for (const key in data[0][question]) {
-            //console.log(`${key}: ${data[0][question][key]}`);
-            //  console.log(`${key}: ${data[0][question][0]}`);
-        }
-    }
-    //setTimeout(resolve, 20);
-    //setTimeout(200)      
-}
-
-// });
-
-/**
- * Main Quiz Loop
- */
-//    function runGame(gameType)
-function runQuiz(data) {
-    // document.getElementById("answer-box").value = "";
-    // document.getElementById("answer-box").focus();
-    //document.getElementById("content3").innerText = "Hi World again";
-    // startQuiz();
-    //document.getElementById("content3").innerText = "Hi Hi World again";
-    console.log(data);
-    //const q = data[0].question.text;
-
-    for (let i = 0; i < data.length; i++) {
-        displayQuestion(data[i].question.text);
-//        const myArray = data[i].incorrectAnswers.split(", ");
-   // console.log(p);
-        displayAnswerOptions(data[i].correctAnswer, data[i].incorrectAnswers);
-        getUserAnswer();
-
-        displayCorrectAnswer(data[i].correctAnswer);
-
-        if (checkAnswer()) {
-            incrementCorrectCount();
-        } else {
-            incrementWrongCount();
-        }
-        // user selects 'next question' so that loop doesn't run through all questions instantly
-    }
+    displayQuestion(currentQuestion.question.text);
+    displayAnswerOptions(currentQuestion.correctAnswer, currentQuestion.incorrectAnswers);
 }
 
 function displayQuestion(q) {
-    //        document.getElementById("content2").innerText = "Question: " + data[0].question.text;  // access the actual question: object = question -> text = parameter.
-    document.getElementById("question").innerText = "Question: " + q;  // access the actual question: object = question -> text = parameter.
-    // document.getElementById("content2").textContent = "Question: " + q; 
-};
+    document.getElementById("question").innerText = q;
+}
 
 function displayAnswerOptions(q, p) {
-    // these need to be randomised
-    // and displayed in indivdual boxes numbered 1 to 4
-   // let r = p;
-    console.log(p);
-    document.getElementById("answer1").innerText = q ;
-    document.getElementById("answer2").innerText = p[0] ;
-    document.getElementById("answer3").innerText = p[1] ;
-    document.getElementById("answer4").innerText = p[2] ;
+    const answerButtons = document.querySelectorAll(".answer-btn");
+    const options = [q, p[0], p[1], p[2]];
+    const shuffledOptions = shuffleArray(options);
 
-    //       document.getElementById("content6").textContent = "Answer Choice: " + q + " " + p;
+    for (let i = 0; i < answerButtons.length; i++) {
+        answerButtons[i].innerText = shuffledOptions[i];
+    }
+}
 
-};
-
-function displayCorrectAnswer(q) {
-    document.getElementById("content4").innerText = "correctAnswer: " + q;
-};
-
-function getUserAnswer() {
-    //        let answer = document.getElementById("answer").textContent;
-    //        return answer;
+function shuffleArray(array) {
+    const shuffledArray = array.slice();
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+    }
+    return shuffledArray;
 }
 
 function checkAnswer() {
-    //  is user answer = data[i].correctAnswer
-    // return 0 == incorrect; 1 == correct
-    //     let userAnswer = parseInt(document.getElementById("answer-box").value);
-    return 1;
+    const userAnswer = this.innerText;
+    const correctAnswer = questions[currentQuestionIndex].correctAnswer;
+
+    if (userAnswer === correctAnswer) {
+        document.getElementById("cab").innerText = "Correct!";
+        incrementCorrectCount();
+    } else {
+        document.getElementById("cab").innerText = "Incorrect!";
+        incrementWrongCount();
+    }
+
+    // Move to the next question
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        runQuiz(currentQuestionIndex);
+    } else {
+        displayFinalScore();
+    }
 }
+
 function incrementCorrectCount() {
-    console.log("correct");
-    //   let oldScore = parseInt(document.getElementById("score").innerText);
-    //document.getElementById("score").innerText = ++oldScore;
-
+    correctCount++;
+    document.getElementById("csb").innerText = "Correct score = " + correctCount;
 }
-function incrementWrongCount() {
-    console.log("wrong");
-    //      let oldScore = parseInt(document.getElementById("incorrect").innerText);
-    //document.getElementById("incorrect").innerText = ++oldScore;
 
+function incrementWrongCount() {
+    wrongCount++;
+    document.getElementById("wsb").innerText = "Wrong score = " + wrongCount;
+}
+
+function displayFinalScore() {
+    // You can add logic here to display the final score or perform any other actions
+    console.log("Quiz finished. Correct: " + correctCount + ", Wrong: " + wrongCount);
 }
 
 
