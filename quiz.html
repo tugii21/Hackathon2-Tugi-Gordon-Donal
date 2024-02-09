@@ -37,8 +37,7 @@
                 <input class="form-control col-md-6" type="number" id="answerbox" placeholder="0">
                 <!-- Donal data-type="submit" -->
                 <button data-type="submit" class="btn btn-primary col-md-6" id="sub-btn"><span>Submit Answer</span></button>
-                <button data-type="start" class="btn btn-primary col-md-6" id="sub-btn"><span>Start</span></button>
-
+                <button data-type="start" class="btn btn-primary col-md-6" id="sub-btn2"><span>Start</span></button>
             </div>
         </div>
 
@@ -48,13 +47,36 @@
         <span class="correct-answer-box mb-2" id="cab">This is the correct answer box</span>
         <span class="correct-score-box mb-2" id="csb">Correct score = []</span>
         <span class="wrong-score-box mb-2" id="wsb">Wrong score = []</span>
-        <button class="btn btn-primary">Next</button>
+        <button class="btn btn-primary" id="next">Next</button>
     </div>
 
 
-
-
-
+            <!--
+                < Donal - trying to get a pause in program flow to work ...            
+                -->
+<!--
+    <form id="myForm">
+        <label for="userInput">Enter Something:</label>
+        <input type="text" id="userInput" name="userInput">   
+        <button type="submit">Submit</button>
+      </form>
+      
+      
+      <script>
+      document.getElementById('myForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from submitting and reloading the page
+        
+        const userInput = document.getElementById('userInput').value;
+        console.log("User input:", userInput);
+        
+        // Continue with your program logic here using the userInput
+        
+        // For demonstration purposes, let's alert the user with their input
+        alert("You entered: " + userInput);
+      });
+      </script>
+      
+    -->
     
 
     </div>
