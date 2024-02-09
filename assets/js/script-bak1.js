@@ -1,37 +1,7 @@
-/*
-wait for the page/DOM to load
-add event listeners
-*/
-/*
-document.addEventListener("DOMContentLoaded", function () {
-    let buttons = document.getElementsByTagName("button");
-    console.log(buttons);
-    //for (let i=0; i < buttons.length; i++) - traditional, more explicit (clearer?) syntax
-    for (let button of buttons) {
-        // iterate through array of buttons and add event listener to each button
-        button.addEventListener("click", startQuiz() /*function () {
-                if (this.getAttribute("data-type") === "submit") {
-                    checkAnswer();
-                    //alert("You clicked submit");
-                } else {
-                    startQuiz();
-                    //let gameType = this.getAttribute("data-type");
-                    //runGame(gameType);
-                    //alert(`You clicked ${gameType}`);                
-                }
-            }
-            )
-        }
-    });
-*/
-
-
-
 
 document.addEventListener("DOMContentLoaded", function () {
-    const response = await fetch('https://the-trivia-api.com/v2/questions');
-    const data = await response.json();
-
+ //   const response = await fetch('https://the-trivia-api.com/v2/questions');
+   // const data = await response.json();
     console.log("test");
     let buttons = document.getElementsByTagName("button");
     console.log(buttons);
@@ -43,10 +13,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 startQuiz();
             }  else if (this.getAttribute("data-type") === "submit") {
                     //checkAnswer();
-                    cab.style.display = 'block';
+                 //   cab.style.display = 'block';
                     let userAnswer = getUserAnswer();
                     console.log("checkAnswer test");
                     console.log("checkAnswer test" + userAnswer);
+                    cab.style.display = 'block';
+                    setTimeout(2000000);
+
                     if (checkAnswer(userAnswer, 3)) {
                         incrementCorrectCount();
                     } else {
@@ -59,7 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     startQuiz();
 
 //                    runQuiz(data);
-                } else {
+                }
+                 else {
                     cab.style.display = 'block';
                     startQuiz();
 //                    runQuiz(data);                             
@@ -81,9 +55,9 @@ async function startQuiz() {
     setTimeout(2000000);
 
     console.log("test");
-//    const response = await fetch('https://the-trivia-api.com/v2/questions');
-  //  const data = await response.json();
-    //console.log("test");
+    const response = await fetch('https://the-trivia-api.com/v2/questions');
+    const data = await response.json();
+    console.log("test");
     if (response.ok) {
         console.log(data);
     }
