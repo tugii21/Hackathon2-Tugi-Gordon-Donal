@@ -101,7 +101,7 @@ We deployed the project to GitHub cloud.
   - From the source section drop-down menu, select the Master Branch
   - Once the main branch has been selected, the page will be automatically be refreshed with a detailed ribbon display to indicate the successful deployment. 
 
-The live link can be found here - -------update link here---------- https://snoodyk.github.io/Brushes-and-Bytes/
+The live link can be found here - https://tugii21.github.io/TheDreamTeamQuiz/quiz.html
 
 ## Credits 
 
