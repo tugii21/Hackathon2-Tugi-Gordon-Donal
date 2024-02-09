@@ -6,7 +6,7 @@ body {
   nav {
     font-family: 'Bebas Neue', sans-serif;
     margin-bottom: 5px;
-  
+ 
   }
   .quiz-button {
     font-family: 'Honk', system-ui, sans-serif;
@@ -35,7 +35,7 @@ body {
    border-color: #4682B4;
    border-width: 5px;
    margin: 5px;
-    
+   
     background-color: yellow;
   }
 
@@ -180,7 +180,7 @@ button, input, optgroup, select, textarea {
 
 .mt-10 {
   margin-top: 1rem;
-  
+ 
 }
 p{
   margin: 1;
@@ -195,7 +195,7 @@ p{
 }
 
 textarea{
-  
+ 
   appearance: none;
   background-color: #fff;
   border-color: #6b7280;
@@ -212,7 +212,7 @@ textarea{
  .main-content {
     padding-bottom: 33%; /* Adjust as needed */
 }
-.leading-6 
+.leading-6
 { line-height: 1; }
 
 .py-4 {
@@ -223,3 +223,67 @@ textarea{
 /*  CSS for Feedback section - Finished*/
 
 
+
+
+
+
+
+
+
+
+
+
+/*  CSS for Feedback section - Finished*/
+
+
+/* this code makes all images slides on main page and use css &js slider effect- code starts here*/
+
+.slider-container {
+  width: 100%;
+  height: 100vh; /* Make the container full viewport height */
+  position: relative;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  height: 100%;
+  transition: transform 3s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  flex: 0 0 auto;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the entire slide */
+   object-position: center; /* Center the image within the slide */
+}
+
+ this code makes all images slides on main page and makes js sliding effect- code Finish here*/
+
+
+
+this code makes text inside images*/
+.button-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.button-container button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #9bb720;
+  color: #000000;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  cursor: pointer;
+}
