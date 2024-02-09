@@ -210,7 +210,9 @@ textarea{
  
 }
 
-
+.feedback {
+  color: aliceblue;
+}
  /* CSS for padding */
  .main-content {
     padding-bottom: 33%; /* Adjust as needed */
