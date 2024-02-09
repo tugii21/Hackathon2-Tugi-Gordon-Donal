@@ -84,7 +84,7 @@ function displayFinalScore() {
     // You can add logic here to display the final score or perform any other actions
     console.log("Quiz finished. Correct: " + correctCount + ", Wrong: " + wrongCount);
 }
-=======
+
 function runQuiz(questionIndex) {
     const currentQuestion = questions[questionIndex];
     displayQuestion(currentQuestion.question.text);
